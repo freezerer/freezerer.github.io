@@ -20,19 +20,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="这是我的第一个博客">
+  <meta name="description" content="花指令题目：杭师大2023校赛决赛“虽然他送了我玫瑰花”（已经上线NSS平台） 此题中一处简单的花指令，可能不是考察的重点，但是是我第一次遇到，学习了一些之后总结了几点经验 花指令是在程序中毫无作用但是能干扰反编译的指令的总称，比如此题中 12345.text:0040114F                 test    ebx, ebx.text:00401151">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My-first-blog">
-<meta property="og:url" content="http://example.com/2023/03/28/My-first-blog/index.html">
+<meta property="og:title" content="逆向-花指令">
+<meta property="og:url" content="http://example.com/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Freezerer的CTF日记">
-<meta property="og:description" content="这是我的第一个博客">
+<meta property="og:description" content="花指令题目：杭师大2023校赛决赛“虽然他送了我玫瑰花”（已经上线NSS平台） 此题中一处简单的花指令，可能不是考察的重点，但是是我第一次遇到，学习了一些之后总结了几点经验 花指令是在程序中毫无作用但是能干扰反编译的指令的总称，比如此题中 12345.text:0040114F                 test    ebx, ebx.text:00401151">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-28T12:31:49.000Z">
-<meta property="article:modified_time" content="2023-03-28T12:32:21.346Z">
+<meta property="og:image" content="f:\freezerer.github.io\pictures\huazhiling.png">
+<meta property="og:image" content="f:\freezerer.github.io\pictures\huazhiling2.png">
+<meta property="og:image" content="f:\freezerer.github.io\pictures\huazhiling3.png">
+<meta property="og:image" content="f:\freezerer.github.io\pictures\huazhiling4.png">
+<meta property="article:published_time" content="2023-04-05T03:29:24.000Z">
+<meta property="article:modified_time" content="2023-04-05T03:29:49.127Z">
 <meta property="article:author" content="Freezerer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="f:\freezerer.github.io\pictures\huazhiling.png">
 
-<link rel="canonical" href="http://example.com/2023/03/28/My-first-blog/">
+<link rel="canonical" href="http://example.com/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/">
 
 
 <script id="page-configurations">
@@ -45,7 +50,7 @@
   };
 </script>
 
-  <title>My-first-blog | Freezerer的CTF日记</title>
+  <title>逆向-花指令 | Freezerer的CTF日记</title>
   
 
 
@@ -151,7 +156,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/My-first-blog/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +169,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          My-first-blog
+          逆向-花指令
         </h1>
 
         <div class="post-meta">
@@ -175,7 +180,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-28 20:31:49 / 修改时间：20:32:21" itemprop="dateCreated datePublished" datetime="2023-03-28T20:31:49+08:00">2023-03-28</time>
+              <time title="创建时间：2023-04-05 11:29:24 / 修改时间：11:29:49" itemprop="dateCreated datePublished" datetime="2023-04-05T11:29:24+08:00">2023-04-05</time>
             </span>
 
           
@@ -189,7 +194,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这是我的第一个博客</p>
+        <h1 id="花指令"><a href="#花指令" class="headerlink" title="花指令"></a>花指令</h1><p>题目：杭师大2023校赛决赛“虽然他送了我玫瑰花”（已经上线NSS平台）</p>
+<p>此题中一处简单的花指令，可能不是考察的重点，但是是我第一次遇到，学习了一些之后总结了几点经验</p>
+<p>花指令是在程序中毫无作用但是能干扰反编译的指令的总称，比如此题中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text:0040114F                 test    ebx, ebx</span><br><span class="line">.text:00401151                 jnz     short near ptr byte_401155</span><br><span class="line">.text:00401153                 jz      short loc_401156</span><br><span class="line">.text:00401153 ; ---------------------------------------------------------------------------</span><br><span class="line">.text:00401155 byte_401155     db 0C7h                 ; CODE XREF: .text:00401151↑j</span><br></pre></td></tr></table></figure>
+
+<p>test指令后一组jz+jnz完全相反条件的指令（jz&#x3D;jump if zero；jnz&#x3D;jump not zero)可以看出这两条指令必然有一条不能执行，实际动调发现执行的应该是jz指令，那么jnz就完全没有用处，他跳转到了.text:00401155，此处只有一个无效字节也没有具体意义，但是却干扰了IDA的反编译使IDA不能识别（IDA的识别原理是将文件的字节码按从上到下的顺序翻译成汇编语言，如果某处逻辑错误可能会跳过进而编译下一段或者直接反编译进汇编，这就导致后面的函数分析不准确从而拿不到真正的函数），</p>
+<p><img src="F:\freezerer.github.io\pictures\huazhiling.png" alt="huazhiling"></p>
+<p>所以通过edit-patch program-change bytes将此处C7改为90（即为nop指令字节码，nop就是什么都不做，但是nop指令有实际意义即告诉机器什么都不做，而之前的C7没有意义机器不知道该怎么办，两者不一样），之后手动使IDA重新分析，按U可以使现在行的所属块回到未定义状态（全返回成字节码），这里一个细节可能第一次接触花指令没注意到，去定义这一步操作要去到位，可以多但不能少，一定要包含花指令的部分）再按P可以重新定义这一部分，直到左边的黄地址全部变成黑色（正常识别颜色）位置，再按F5就可以得到原本的主函数了</p>
+<p><img src="F:\freezerer.github.io\pictures\huazhiling2.png" alt="huazhiling2"></p>
+<p><img src="F:\freezerer.github.io\pictures\huazhiling3.png" alt="huazhiling3"></p>
+<p><img src="F:\freezerer.github.io\pictures\huazhiling4.png" alt="huazhiling4"></p>
+<p>最后，感谢tgrddf55大佬的指导，更详细的内容请移步大佬博客<a target="_blank" rel="noopener" href="https://tgrddf55.github.io/">https://tgrddf55.github.io/</a></p>
 
     </div>
 
@@ -204,11 +220,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/" rel="next" title="逆向-花指令">
-      逆向-花指令 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/03/28/My-first-blog/" rel="prev" title="My-first-blog">
+      <i class="fa fa-chevron-left"></i> My-first-blog
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -267,6 +283,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8A%B1%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">花指令</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
