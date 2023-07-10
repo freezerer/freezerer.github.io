@@ -20,24 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="花指令题目：杭师大2023校赛决赛“虽然他送了我玫瑰花”（已经上线NSS平台） 此题中一处简单的花指令，可能不是考察的重点，但是是我第一次遇到，学习了一些之后总结了几点经验 花指令是在程序中毫无作用但是能干扰反编译的指令的总称，比如此题中 12345.text:0040114F                 test    ebx, ebx.text:00401151">
+  <meta name="description" content="C++从0开始前言本人因为大学刚接触计算机和编程，在第一学期并没有打好基础，因此重新系统地学习一遍C++语言，从而真正养成计算机行业的思维方式和编程思想，此系列会一直更新至C++学习完毕，以细致为主，后续开设Q&amp;A部分记录学习中遇到的问题 C++是怎样工作的我们学习编程的第一课往往是hello world，但是每一个语句都有其深刻的含义，要去理解程序的本质 123456#include&amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逆向-花指令">
-<meta property="og:url" content="http://example.com/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:title" content="C++基础1">
+<meta property="og:url" content="http://example.com/2023/07/10/C-%E5%9F%BA%E7%A1%80%E4%B8%80/index.html">
 <meta property="og:site_name" content="Freezerer的CTF日记">
-<meta property="og:description" content="花指令题目：杭师大2023校赛决赛“虽然他送了我玫瑰花”（已经上线NSS平台） 此题中一处简单的花指令，可能不是考察的重点，但是是我第一次遇到，学习了一些之后总结了几点经验 花指令是在程序中毫无作用但是能干扰反编译的指令的总称，比如此题中 12345.text:0040114F                 test    ebx, ebx.text:00401151">
+<meta property="og:description" content="C++从0开始前言本人因为大学刚接触计算机和编程，在第一学期并没有打好基础，因此重新系统地学习一遍C++语言，从而真正养成计算机行业的思维方式和编程思想，此系列会一直更新至C++学习完毕，以细致为主，后续开设Q&amp;A部分记录学习中遇到的问题 C++是怎样工作的我们学习编程的第一课往往是hello world，但是每一个语句都有其深刻的含义，要去理解程序的本质 123456#include&amp;l">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2023/04/05/pp568f0.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/04/05/pp56JpV.md.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/04/05/pp563Yq.md.png">
-<meta property="og:image" content="https://s1.ax1x.com/2023/04/05/pp561kn.md.png">
-<meta property="article:published_time" content="2023-04-05T03:29:24.000Z">
-<meta property="article:modified_time" content="2023-04-05T04:44:00.191Z">
+<meta property="article:published_time" content="2023-07-10T11:20:51.000Z">
+<meta property="article:modified_time" content="2023-07-10T11:53:50.100Z">
 <meta property="article:author" content="Freezerer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2023/04/05/pp568f0.png">
 
-<link rel="canonical" href="http://example.com/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/">
+<link rel="canonical" href="http://example.com/2023/07/10/C-%E5%9F%BA%E7%A1%80%E4%B8%80/">
 
 
 <script id="page-configurations">
@@ -50,7 +45,7 @@
   };
 </script>
 
-  <title>逆向-花指令 | Freezerer的CTF日记</title>
+  <title>C++基础1 | Freezerer的CTF日记</title>
   
 
 
@@ -156,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/%E9%80%86%E5%90%91-%E8%8A%B1%E6%8C%87%E4%BB%A4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/10/C-%E5%9F%BA%E7%A1%80%E4%B8%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          逆向-花指令
+          C++基础1
         </h1>
 
         <div class="post-meta">
@@ -180,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-04-05 11:29:24 / 修改时间：12:44:00" itemprop="dateCreated datePublished" datetime="2023-04-05T11:29:24+08:00">2023-04-05</time>
+              <time title="创建时间：2023-07-10 19:20:51 / 修改时间：19:53:50" itemprop="dateCreated datePublished" datetime="2023-07-10T19:20:51+08:00">2023-07-10</time>
             </span>
 
           
@@ -194,18 +189,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="花指令"><a href="#花指令" class="headerlink" title="花指令"></a>花指令</h1><p>题目：杭师大2023校赛决赛“虽然他送了我玫瑰花”（已经上线NSS平台）</p>
-<p>此题中一处简单的花指令，可能不是考察的重点，但是是我第一次遇到，学习了一些之后总结了几点经验</p>
-<p>花指令是在程序中毫无作用但是能干扰反编译的指令的总称，比如此题中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text:0040114F                 test    ebx, ebx</span><br><span class="line">.text:00401151                 jnz     short near ptr byte_401155</span><br><span class="line">.text:00401153                 jz      short loc_401156</span><br><span class="line">.text:00401153 ; ---------------------------------------------------------------------------</span><br><span class="line">.text:00401155 byte_401155     db 0C7h                 ; CODE XREF: .text:00401151↑j</span><br></pre></td></tr></table></figure>
+        <h1 id="C-从0开始"><a href="#C-从0开始" class="headerlink" title="C++从0开始"></a>C++从0开始</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本人因为大学刚接触计算机和编程，在第一学期并没有打好基础，因此重新系统地学习一遍C++语言，从而真正养成计算机行业的思维方式和编程思想，此系列会一直更新至C++学习完毕，以细致为主，后续开设Q&amp;A部分记录学习中遇到的问题</p>
+<h2 id="C-是怎样工作的"><a href="#C-是怎样工作的" class="headerlink" title="C++是怎样工作的"></a>C++是怎样工作的</h2><p>我们学习编程的第一课往往是hello world，但是每一个语句都有其深刻的含义，要去理解程序的本质</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout&lt;&lt;<span class="string">&quot;hello world!&quot;</span>&lt;&lt;std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>test指令后一组jz+jnz完全相反条件的指令（jz&#x3D;jump if zero；jnz&#x3D;jump not zero)可以看出这两条指令必然有一条不能执行，实际动调发现执行的应该是jz指令，那么jnz就完全没有用处，他跳转到了.text:00401155，此处只有一个无效字节也没有具体意义，但是却干扰了IDA的反编译使IDA不能识别（IDA的识别原理是将文件的字节码按从上到下的顺序翻译成汇编语言，如果某处逻辑错误可能会跳过进而编译下一段或者直接反编译进汇编，这就导致后面的函数分析不准确从而拿不到真正的函数），</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pp568f0"><img src="https://s1.ax1x.com/2023/04/05/pp568f0.png" alt="pp568f0.png"></a></p>
-<p>所以通过edit-patch program-change bytes将此处C7改为90（即为nop指令字节码，nop就是什么都不做，但是nop指令有实际意义即告诉机器什么都不做，而之前的C7没有意义机器不知道该怎么办，两者不一样），之后手动使IDA重新分析，按U可以使现在行的所属块回到未定义状态（全返回成字节码），这里一个细节可能第一次接触花指令没注意到，去定义这一步操作要去到位，可以多但不能少，一定要包含花指令的部分）再按P可以重新定义这一部分，直到左边的黄地址全部变成黑色（正常识别颜色）位置，再按F5就可以得到原本的主函数了</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pp56JpV"><img src="https://s1.ax1x.com/2023/04/05/pp56JpV.md.png" alt="pp56JpV.md.png"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pp563Yq"><img src="https://s1.ax1x.com/2023/04/05/pp563Yq.md.png" alt="pp563Yq.md.png"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pp561kn"><img src="https://s1.ax1x.com/2023/04/05/pp561kn.md.png" alt="pp561kn.md.png"></a></p>
-<p>最后，感谢tgrddf55大佬的指导，更详细的内容请移步大佬博客<a target="_blank" rel="noopener" href="https://tgrddf55.github.io/">https://tgrddf55.github.io/</a></p>
+<p>这个程序向我们展示了C++最基本的一些东西，首先先介绍C++的构成，一般C++程序由头文件和源文件构成，我们所使用的IDE（指集成开发环境，包括链接器和编译器，不同语言可能构成不同）将我们写的程序通过链接器链接C++编译器，编译器的作用是将高级语言，此处指C++语言编译成二进制的命令，因为计算机只能执行二进制的机器指令。编译器实现了高级语言对于人类的友好可读并且机器也能读懂。</p>
+<p>上面的例子中#后的语句是预处理语句，预处理发生在编译操作之前，一般我们F5键是编译并执行，按下F5之后IDE会先预处理所有#后的语句并实现他们的功能。这里#include是字面意思，包含一个名字叫做iostream的文件，这一部分（指&lt;&gt;中的部分）我们通常叫做头文件（因为一般写在最开头），#include<iostream>的作用即为将iostream这个文件包含进程序中，它是C++的一个自带文件，用于实现一些输入输出的功能，i指input，o指output，stream意思为水流，连起来就指的是流式输出输入，具体什么意思不过多阐述，只需要知道iostream在这里什么身份什么地位就ok。</p>
+<p>int main（）是定义主函数，int为C++的一种数据类型：整形，这里起到定义的作用，后续我们会详细记录函数的工作原理，这里只需知道函数有接受参数和返回值得功能，这里int就是指定我们定义的main这个函数返回值为int类型。当然，这里说的main函数就是main（）这一部分，（）里放参数，即函数要接受的参数。这里（）是空的是因为main函数不需要接受任何参数就可以执行。</p>
+<p>函数的内容放在函数定义后的{}里，为了程序的从属关系直白明显，我们写成一个{占一行的形式，从而直观看出这个函数里有什么功能。</p>
+<p>这个main函数的功能就是std::cout&lt;&lt;”hello world”&lt;&lt;std::endl;,每一个部分都有自己的含义，比如std指的是<a target="_blank" rel="noopener" href="https://blog.csdn.net/CSDN_fzs/article/details/105678692%E3%80%82%E5%90%8E%E9%9D%A2%E7%9A%84%E4%B8%9C%E8%A5%BF%E6%98%AFC++%E7%9A%84%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%A4%AA%E5%A4%9A%E5%86%85%E5%AE%B9%E5%80%BC%E5%BE%97%E8%AF%A6%E7%BB%86%E8%AE%B0%E5%BD%95%E3%80%82">https://blog.csdn.net/CSDN_fzs/article/details/105678692。后面的东西是C++的语法规范，没有太多内容值得详细记录。</a></p>
+<p>最后main函数中仍有一个return 0；这是函数的返回值，因为main函数不返回任何值，但是函数的定义又要求返回一个值，所以返回0代表什么也不做。</p>
+<p>这就是基本的C++的工作原理，笔者学习的来源是b站的C++网课BV1v14y1n7Js。笔者认为这是比一般C++网课要更令人清楚C++这一门语言的，安利一下。</p>
 
     </div>
 
@@ -221,12 +215,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/28/My-first-blog/" rel="prev" title="My-first-blog">
-      <i class="fa fa-chevron-left"></i> My-first-blog
+    <a href="/2023/04/23/TEA/" rel="prev" title="TEA">
+      <i class="fa fa-chevron-left"></i> TEA
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/04/23/TEA/" rel="next" title="TEA">
-      TEA <i class="fa fa-chevron-right"></i>
+    <a href="/2023/07/10/C-%E5%9F%BA%E7%A1%802/" rel="next" title="C++基础2">
+      C++基础2 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -286,7 +280,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8A%B1%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">花指令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E4%BB%8E0%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">C++从0开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E6%98%AF%E6%80%8E%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="nav-number">1.2.</span> <span class="nav-text">C++是怎样工作的</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
